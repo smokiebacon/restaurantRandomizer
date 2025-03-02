@@ -17,6 +17,61 @@ const userSchema = mongoose.Schema(
     image: {
       type: String,
     },
+    // Social media accounts
+    facebookId: {
+      type: String,
+      sparse: true,
+    },
+    instagramId: {
+      type: String,
+      sparse: true,
+    },
+    tiktokId: {
+      type: String,
+      sparse: true,
+    },
+    youtubeId: {
+      type: String,
+      sparse: true,
+    },
+    // Social media access tokens
+    facebookToken: {
+      type: String,
+      private: true,
+    },
+    instagramToken: {
+      type: String,
+      private: true,
+    },
+    tiktokToken: {
+      type: String,
+      private: true,
+    },
+    youtubeToken: {
+      type: String,
+      private: true,
+    },
+    // TikTok OAuth temporary storage for authentication flow
+    tiktokAuth: {
+      codeVerifier: {
+        type: String,
+        private: true,
+      },
+      csrfState: {
+        type: String,
+        private: true,
+      },
+      timestamp: {
+        type: Date,
+      },
+      refreshToken: {
+        type: String,
+        private: true,
+      },
+      expiresAt: {
+        type: Date,
+      },
+    },
     // Used in the Stripe webhook to identify the user in Stripe and later create Customer Portal or prefill user credit card details
     customerId: {
       type: String,

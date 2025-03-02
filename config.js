@@ -2,18 +2,28 @@ import themes from "daisyui/src/theming/themes";
 
 const config = {
   // REQUIRED
-  appName: "ShipFast",
+  appName: "Hashipost",
   // REQUIRED: a short description of your app for SEO tags (can be overwritten)
-  appDescription:
-    "The NextJS boilerplate with all you need to build your SaaS, AI tool, or any other web app.",
+  appDescription: "Post once and upload everywhere.",
   // REQUIRED (no https://, not trialing slash at the end, just the naked domain)
-  domainName: "shipfa.st",
+  domainName: "hashipost.com",
   crisp: {
     // Crisp website ID. IF YOU DON'T USE CRISP: just remove this => Then add a support email in this config file (resend.supportEmail) otherwise customer support won't work.
     id: "",
     // Hide Crisp by default, except on route "/". Crisp is toggled with <ButtonSupport/>. If you want to show Crisp on every routes, just remove this below
     onlyShowOnRoutes: ["/"],
   },
+  // Social integrations configuration
+  // social: {
+  //   tiktok: {
+  //     // Change these for production environment
+  //     redirectUri:
+  //       process.env.NODE_ENV === "development"
+  //         ? "http://localhost:3000/api/auth/tiktok/callback"
+  //         : "https://hashipost.com/api/auth/tiktok/callback",
+  //     scopes: ["user.info.basic", "video.upload", "video.list"],
+  //   },
+  // },
   stripe: {
     // Create multiple plans in your Stripe dashboard, then add them here. You can add as many plans as you want, just make sure to add the priceId
     plans: [

@@ -23,11 +23,13 @@ if (!uri) {
   if (!global._mongoClientPromise) {
     client = new MongoClient(uri, options);
     global._mongoClientPromise = client.connect();
+    console.log("Connected to MongoDB");
   }
   clientPromise = global._mongoClientPromise;
 } else {
   client = new MongoClient(uri, options);
   clientPromise = client.connect();
+  console.log("Connected to MongoDB");
 }
 
 export default clientPromise;
