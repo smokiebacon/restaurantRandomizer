@@ -34,39 +34,6 @@ export async function GET(req) {
       CryptoJS.enc.Hex
     );
 
-    // Store CSRF state and code verifier in database for validation during callback
-    // await dbConnect();
-    // await User.findByIdAndUpdate(
-    //   session.user.id,
-    //   {
-    //     $set: {
-    //       "tiktokAuth.codeVerifier": code_verifier,
-    //       "tiktokAuth.csrfState": csrfState,
-    //       "tiktokAuth.timestamp": new Date(),
-    //     },
-    //   },
-    //   { upsert: true }
-    // );
-
-    // For a production app, you'd want to use a more secure method like session cookies
-    // with httpOnly and secure flags set, or encrypt the data stored in the database
-
-    // const tiktokScopes = config.social.tiktok.scopes.join(",");
-    // const redirectUri = config.social.tiktok.redirectUri;
-
-    // let tiktokOAuthURL = "https://www.tiktok.com/v2/auth/authorize/";
-
-    // // the following params need to be in `application/x-www-form-urlencoded` format.
-    // tiktokOAuthURL += `?client_key=${process.env.TIKTOK_CLIENT_KEY}`;
-    // tiktokOAuthURL += "&scope=user.info.basic,video.upload,video.list";
-    // tiktokOAuthURL += "&response_type=code";
-    // tiktokOAuthURL += `&redirect_uri=${encodeURIComponent(
-    //   "http://localhost:3000/dashboard/accounts"
-    // )}`;
-    // tiktokOAuthURL += "&state=" + csrfState;
-    // tiktokOAuthURL += `&code_challenge=${code_challenge}`;
-    // tiktokOAuthURL += "&code_challenge_method=S256";
-
     const tiktokOAuthURL = `https://www.tiktok.com/v2/auth/authorize/?client_key=${
       process.env.TIKTOK_CLIENT_KEY
     }&scope=user.info.basic,video.upload,video.list&response_type=code&redirect_uri=${encodeURIComponent(
